@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Herbazia</title>
+  <style>
+    body {
+      font-family: Inter, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fafafa;
+      color: #222;
+      margin: 0;
+    }
+    .box {
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      max-width: 480px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #111;
+    }
+    p {
+      font-size: 16px;
+      color: #444;
+      margin: 10px 0 20px;
+    }
+    .order {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #111;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Thank you for your order!</h1>
+    <p>Your Cash on Delivery order has been received successfully.</p>
+    <div class="order">
+      Order: <span id="ord">Processing...</span>
+    </div>
+    <a href="/">Continue Shopping</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || params.get('number');
+    document.getElementById('ord').textContent = name ? name : 'Processing...';
+  </script>
+</body>
+</html>
